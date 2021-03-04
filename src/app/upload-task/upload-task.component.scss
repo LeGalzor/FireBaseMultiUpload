@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    margin: 12px 0;
+    padding: 5px 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #000000;
+    border-radius: 5px;
+    .snapshot > .mat-icon {
+        font-size: 48px;
+        display: contents;
+    }
+    .snapshot {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+
+        // .snapshot > .mat-icon ~ .mat-icon{
+        //     font-size: 24px;
+        //     display: contents;
+        // }
+        .progress {
+            width: 70%;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+            p {
+                display: flex;
+                align-self: baseline;
+                margin: 0 0 0 5px;
+            }
+            progress {
+                width: 98%;
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+#logo {
+    background-image: url("../../assets/assignment-24px.svg");
+}
+#completed {
+    color: green;
+}

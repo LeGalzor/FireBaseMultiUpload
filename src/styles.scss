@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+html, 
+body {
+    height: 100%;
+    background-color: rgb(124, 144, 145);
+    overflow-y: hidden;
+}
+.dropzone { 
+    display: flex;
+    margin: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    width: 98%;
+    font-weight: 200;
+    height: 300px;
+    border: 2px dashed #000000;
+    border-radius: 15px;
+  
+    &.hovering {
+        border: 2px solid #f16624;
+        color: #dadada !important;
+    }
+  
+    .file-label {
+        font-size: 1.2em;
+    }
+  }
+  
+  progress::-webkit-progress-value {
+    transition: width 0.1s ease;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

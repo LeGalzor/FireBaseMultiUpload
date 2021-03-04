@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
+ ## How it works ?
+ 
+ :tv: Screen captured some flows  
+ 
+<a href="https://youtu.be/pMAPtr6Owng
+" target="_blank"><img src="https://j.gifs.com/NLP0qz.gif" 
+alt="Video Tutorial for Angular 5 CRUD Using Firebase" width="1000" height="500" border="10" /></a>
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

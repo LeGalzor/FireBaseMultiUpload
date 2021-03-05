@@ -68,8 +68,6 @@ export class UploadTaskComponent implements OnInit {
     );
   }
   getIconClass(identifer: string) {
-    console.log(identifer);
-    
     if (this.hasCanceledTask){
       return 'canceled';
     }else if (this.downloadURL){

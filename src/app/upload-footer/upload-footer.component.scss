@@ -42,14 +42,14 @@
         }
       }
        .mat-expansion-panel-body{
+        overflow-y: auto;
+        max-height: 27em;
           p {
               color: black;
           }
       }
       .mat-expansion-indicator::after {
         color: white;
-        position: absolute;
-        padding: px;
       }
       mat-expansion-indicator {
         position: absolute;

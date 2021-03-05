@@ -4,6 +4,9 @@
   .disable_ripple:hover{
     background: currentColor !important;
     }
+    disabled {
+        cursor: not-allowed;
+    }
   .container {
       .mat-accordion {
         width: 25%;

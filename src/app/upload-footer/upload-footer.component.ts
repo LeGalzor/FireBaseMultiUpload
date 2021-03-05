@@ -24,7 +24,9 @@ export class UploadFooterComponent implements OnInit {
   }
   ngAfterViewInit(){
   }
-
+  shouldDisable(){
+    return this.files.length > 0 ? false : true ;
+  }
   stopAllTasks(e: Event){
     e.stopPropagation();
   

@@ -1,3 +1,8 @@
+.mat-icon {
+    font-size: 48px;
+    display: contents;
+}
+
 .container {
     display: flex;
     margin: 12px 0;
@@ -9,6 +14,7 @@
     .snapshot > .mat-icon {
         font-size: 48px;
         display: contents;
+
     }
     .snapshot {
         width: 100%;
@@ -49,3 +55,22 @@
 #completed {
     color: green;
 }
+mat-icon{
+    &.notranslate  {
+        &.link{
+            cursor: pointer;
+        }
+        &.canceled {
+            color: grey;
+            cursor: not-allowed;
+        }
+        &.completed {
+            color: green;
+            &.link {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+

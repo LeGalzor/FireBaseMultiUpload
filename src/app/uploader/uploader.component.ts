@@ -8,16 +8,19 @@ import { Component } from '@angular/core';
 export class UploaderComponent {
 
   isHovering: boolean;
-
+  filesToUpload: File[] = [];
   files: File[] = [];
 
   toggleHover(event: boolean) {
     this.isHovering = event;
   }
 
-  onDrop(files: FileList) {
+  onDropOrBrowse(files: FileList) {
     for (let i = 0; i < files.length; i++) {
       this.files.push(files.item(i));
     }
   }
+  handleFileInput(files: FileList) {
+    this.onDropOrBrowse(files);
+}
 }

@@ -20,6 +20,7 @@ export class UploadTaskComponent implements OnInit {
   percentage: Observable<number>;
   snapshot: Observable<any>;
   downloadURL: string;
+  hasCanceledTask: boolean = false;
 
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
@@ -66,6 +67,17 @@ export class UploadTaskComponent implements OnInit {
       }),
     );
   }
+  getIconClass(identifer: string) {
+    console.log(identifer);
+    
+    if (this.hasCanceledTask){
+      return 'canceled';
+    }else if (this.downloadURL){
+      return 'completed';
+    }else if (identifer === 'rightIcon'){
+      return 'link';
+    }
+  }
    formatBytes(bytes, decimals = 2) {
     if (bytes === 0) return '0 Bytes';
 
@@ -79,12 +91,32 @@ export class UploadTaskComponent implements OnInit {
 }
 formatName(name: string){
     const filenameIndexStart = name.lastIndexOf('/');
-    return name.substring(filenameIndexStart + 1);
+    return this.truncate(name.substring(filenameIndexStart + 1));
 }
   isActive(snapshot) {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes;
   }
   stopTask(){
     this.task.cancel();
+  }
+  openNewUrl(downloadURL){
+    window.open(downloadURL);
+  }
+   truncate(str){
+    return (str.length > 31) ? str.substr(0, 25) + '..' + str.substr(str.length -4 , str.length) : str;
+  };
+  cancelTask(){
+    this.hasCanceledTask = true;   
+    this.task.cancel();
+  }
+  getActionIcon(){
+    if (this.hasCanceledTask){
+      return 'dangerous';
+    }
+    if (!this.downloadURL){
+      return 'delete'
+    }else{
+      return  'check_circle_outline'
+    }
   }
 }

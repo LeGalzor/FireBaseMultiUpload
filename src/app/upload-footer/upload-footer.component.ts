@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, Input, OnInit, QueryList, ViewChildren, ViewEncapsulation } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { UploadTask } from '@angular/fire/storage/interfaces';
 import { UploadTaskComponent } from '../upload-task/upload-task.component';
@@ -6,7 +6,8 @@ import { UploadTaskComponent } from '../upload-task/upload-task.component';
 @Component({
   selector: 'app-upload-footer',
   templateUrl: './upload-footer.component.html',
-  styleUrls: ['./upload-footer.component.scss']
+  styleUrls: ['./upload-footer.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class UploadFooterComponent implements OnInit {
   panelOpenState = false;

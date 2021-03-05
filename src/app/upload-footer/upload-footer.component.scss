@@ -1,30 +1,39 @@
 .mat-form-field + .mat-form-field {
     margin-left: 8px;
   }
+  .disable_ripple:hover{
+    background: currentColor !important;
+    }
   .container {
-      width: 25%;
-      background-color: black;
-      border-radius: 5px;
-      position: fixed;
-        right: 0;
-        bottom: 0;
-    //   * {
-    //       color: white;
-    //   }
+      .mat-accordion {
+        width: 25%;
+        background: black;
+        border-radius: 5px;
+        position: fixed;
+          right: 0;
+          bottom: 0;
+      }
+      span, p {
+        color: white;
+        font-weight: 300;
+      }
       .title{
           display: flex;
           align-items: center;
           justify-content: center;
           p {
               margin: 0;
-              font-weight: bold;
           }
       }
       ::ng-deep .mat-expansion-panel-content {
         max-height: 30em;
         overflow-y: auto;
       }
-      ::ng-deep .mat-expansion-panel-header {
+      mat-expansion-panel-header, mat-expansion-panel-header.mat-expanded:focus {
+        background: black;
+      }
+      ::ng-deep .mat-expansion-panel-header.mat-expanded:focus  {
+        background: black;
         #stopAll {
             cursor: pointer;
             font-size: 22px;
@@ -32,13 +41,21 @@
             z-index: 1000;
         }
       }
-      ::ng-deep .mat-expansion-panel-body{
-          background-color: white;
+       .mat-expansion-panel-body{
           p {
               color: black;
           }
       }
-      ::ng-deep .mat-expansion-indicator {
+      .mat-expansion-indicator::after {
+        color: white;
+        position: absolute;
+        padding: px;
+      }
+      mat-expansion-indicator {
+        position: absolute;
+        right: 4em;
+      }
+      .mat-expansion-indicator {
         position: absolute;
         right: 4em;
       }

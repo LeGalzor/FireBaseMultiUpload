@@ -1,12 +1,18 @@
 <div class="dropzone" 
      dropzone
      (hovered)="toggleHover($event)"
-     (dropped)="onDrop($event)"
+     (dropped)="onDropOrBrowse($event)"
      [class.hovering]="isHovering">
 
 
      <h3>AngularFire Drop Zone</h3>
      <p>Drag and Drop a File</p>
+     <div class="form-group">
+      <input type="file"
+             id="file"
+             (change)="handleFileInput($event.target.files)"
+             multiple>
+  </div>
 </div>
 
 
